@@ -60,9 +60,8 @@ public class _747_Largest_Number_At_Least_Twice_of_Others {
                 secondMax = nums[i];
             }
         }
-        System.out.println(max);
-        System.out.println(secondMax);
-
+        //System.out.println(max);
+        //System.out.println(secondMax);
         return (max >= (2 * secondMax)) ? maxIndex : -1;
     }
 }
