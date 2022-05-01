@@ -1,7 +1,6 @@
 package arrays;
 
 import java.util.Arrays;
-
 /*
 We have two special characters:
 
@@ -43,7 +42,6 @@ public class _717_1_bit_and_2_bit_Characters {
         for (int i = bits.length - 2; i >= 0 && bits[i] != 0 ; i--) {
             counter++;
         }
-
         return (counter % 2 > 0) ? false : true;
     }
 }
