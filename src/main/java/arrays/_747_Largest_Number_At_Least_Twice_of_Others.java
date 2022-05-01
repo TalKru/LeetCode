@@ -33,13 +33,15 @@ public class _747_Largest_Number_At_Least_Twice_of_Others {
 
     public static void main(String[] args) {
 
-        //int[] arr = {3,6,1,0};
+        int[] arr = {3,6,1,0};
         //int[] arr = {1,2,3,4};
-        int[] arr = {0,0,3,2};
-
-        System.out.println(dominantIndex(arr));
+        //int[] arr = {0,0,3,2};
+        int index = dominantIndex(arr);
+        System.out.println("Index of Largest_Number_At_Least_Twice_of_Others: " + index);
+        System.out.println("Vlue: " + arr[index]);
     }
 
+    // O(n)
     public static int dominantIndex(int[] nums) {
 
         if(nums.length <= 1){
@@ -60,9 +62,7 @@ public class _747_Largest_Number_At_Least_Twice_of_Others {
                 secondMax = nums[i];
             }
         }
-        //System.out.println(max);
-        //System.out.println(secondMax);
-        return max >= (2 * secondMax) ? maxIndex : -1;
+        return (max >= (2 * secondMax)) ? maxIndex : -1;
     }
 }
 
