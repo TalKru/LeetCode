@@ -1,6 +1,6 @@
 package questions.matrix;
 /*
-Given a square questions.matrix mat, return the sum of the questions.matrix diagonals.
+Given a square matrix mat, return the sum of the questions.matrix diagonals.
 Only include the sum of all the elements on the primary diagonal 
 and all the elements on the secondary diagonal 
 that are not part of the primary diagonal.
@@ -33,7 +33,7 @@ n == mat.length == mat[i].length
 public class _1572_Matrix_Diagonal_Sum {
 
 	public static void main(String[] args) {
-
+		// add test code
 	}
 
 	

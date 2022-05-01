@@ -1,6 +1,6 @@
 package questions.trees;
 /*
-Given the roots of two binary questions.trees root and subRoot,
+Given the roots of two binary trees root and subRoot,
 return true if there is a subtree of root with the same 
 structure and node values of subRoot and false otherwise.
 
@@ -83,7 +83,7 @@ public class _572_Subtree_of_Another_Tree {
 		return (lSub || rSub);
 	}
 	
-	// checks is 2 input questions.trees are identical
+	// checks is 2 input trees are identical
 	private static boolean isSameTree(TreeNode p, TreeNode q) { 
 		
 		if(p == null ^ q == null) {

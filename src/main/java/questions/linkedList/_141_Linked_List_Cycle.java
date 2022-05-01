@@ -1,6 +1,4 @@
 package questions.linkedList;
-
-
 /*
 Given head, the head of a linked list, determine if the linked list has a cycle in it.
 
@@ -35,7 +33,9 @@ The number of the nodes in the list is in the range [0, 104].
 -105 <= Node.val <= 105
 pos is -1 or a valid index in the linked-list.
  */
-/**
+
+import java.util.HashSet;
+/*
  * Definition for singly-linked list.
  * class ListNode {
  *     int val;
@@ -54,20 +54,16 @@ public class _141_Linked_List_Cycle {
 		ListNode n2 = new ListNode(2);
 		ListNode n3 = new ListNode(0);
 		ListNode n4 = new ListNode(-4);
-
 		n1.next = n2;
 		n2.next = n3;
 		n3.next = n4;
 		n4.next = n2; // loop!
 
 		boolean res = hasCycle(n1);
-
 		System.out.println("Linked Lisr has cicle: " + res);
-
 	} // main
 
-
-	/* Here we have a fast pointer and a slow pointer. 
+	/* Here we have a fast pointer and a slow pointer.
 	 We keep the fast pointer ahead of slow pointer by one node always. 
 	 In while loop we check if fast pointer is not reaching null then , 
 	 if fast and slow are at same node, we return true. 
@@ -92,28 +88,26 @@ public class _141_Linked_List_Cycle {
 		return false;
 	}
 
-
 	/* simple solution, saves in HashSet every visited node and checks if seen it before */
-	//	public static boolean hasCycle(ListNode head) {
-	//
-	//		if(head == null || head.next == null) { return false; }
-	//	
-	//		ListNode curr = head;
-	//		HashSet<ListNode> visited = new HashSet<>();
-	//
-	//		while(curr.next != null) {
-	//			//System.out.println(curr.val);
-	//
-	//			if(visited.contains(curr)) {
-	//				return true;
-	//			}
-	//			visited.add(curr);
-	//			curr = curr.next;
-	//		}
-	//		return false;
-	//	}
+		public static boolean hasCycle2(ListNode head) {
 
-} // class
+			if(head == null || head.next == null) {
+				return false;
+			}
+			ListNode curr = head;
+			HashSet<ListNode> visited = new HashSet<>();
+
+			while(curr.next != null) {
+
+				if(visited.contains(curr)) {
+					return true;
+				}
+				visited.add(curr);
+				curr = curr.next;
+			}
+			return false;
+		}
+}
 
 
 

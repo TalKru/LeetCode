@@ -1,6 +1,6 @@
 package questions.strings;
 /*
-Given two questions.strings ransomNote and magazine,
+Given two strings ransomNote and magazine,
 return true if ransomNote can be constructed from magazine 
 and false otherwise.
 Each letter in magazine can only be used once in ransomNote.
@@ -25,7 +25,14 @@ public class _383_Ransom_Note {
 
 	public static void main(String[] args) {
 
+		String ransomNote = "aa";
+		String magazine = "aab";
 
+		boolean res = canConstruct(ransomNote, magazine);
+
+		System.out.println("ransomNote: " + ransomNote);
+		System.out.println("magazine: " + magazine);
+		System.out.println("can construct? " + res);
 	}
 
 	public static boolean canConstruct(String ransomNote, String magazine) {
@@ -34,22 +41,20 @@ public class _383_Ransom_Note {
 
 		int[] charCount = new int[256];
 
-		for (int i = 0; i < magazine.length(); i++) { // add all availble characters from magazine
+		for (int i = 0; i < magazine.length(); i++) { // add all available characters from magazine
 			
 			charCount[magazine.charAt(i)]++;
 		}
 		for (int i = 0; i < ransomNote.length(); i++) { // remove used characters for ransom note
 			
 			charCount[ransomNote.charAt(i)]--;
-			if(charCount[ransomNote.charAt(i)] < 0) return false;  // see if any character was used more than availble amount
+
+			if(charCount[ransomNote.charAt(i)] < 0) { // see if any character was used more than available amount
+				return false;
+			}
 		}
-//		for (int i = 0; i < charCount.length; i++) { 
-//			
-//			if(charCount[i] < 0) return false;
-//		}
 		return true;
 	}
-
 }
 
 

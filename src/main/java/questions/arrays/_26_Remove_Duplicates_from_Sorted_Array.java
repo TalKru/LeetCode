@@ -11,8 +11,8 @@ package questions.arrays;
 
 	Return k after placing the final result in the first k slots of nums.
 
-	Do not allocate questions.extra space for another array.
-	You must do this by modifying the input array in-place with O(1) questions.extra memory.
+	Do not allocate extra space for another array.
+	You must do this by modifying the input array in-place with O(1) extra memory.
 
 	Custom Judge:
 
@@ -68,8 +68,6 @@ public class _26_Remove_Duplicates_from_Sorted_Array {
 		System.out.println(Arrays.toString(arr));
 	}
 
-
-	
 	public static int removeDuplicates(int[] nums) {
 
 		int c = 0; // current
@@ -94,6 +92,5 @@ public class _26_Remove_Duplicates_from_Sorted_Array {
 		arr[i] = arr[j];
 		arr[j] = temp;
 	}
-
-} // class
+}
 

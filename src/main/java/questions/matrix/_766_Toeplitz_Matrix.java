@@ -1,12 +1,12 @@
 package questions.matrix;
 /*
-Given an m x n questions.matrix, return true if the questions.matrix is Toeplitz.
+Given an m x n matrix, return true if the matrix is Toeplitz.
 Otherwise, return false.
-A questions.matrix is Toeplitz if every diagonal from top-left to
+A matrix is Toeplitz if every diagonal from top-left to
 bottom-right has the same elements.
 
 Example 1:
-Input: questions.matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
+Input: matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
 Output: true
 Explanation:
 In the above grid, the diagonals are:
@@ -14,24 +14,26 @@ In the above grid, the diagonals are:
 In each diagonal all elements are the same, so the answer is True.
 
 Example 2:
-Input: questions.matrix = [[1,2],[2,2]]
+Input: matrix = [[1,2],[2,2]]
 Output: false
 Explanation:
 The diagonal "[1, 2]" has different elements.
- 
 
 Constraints:
-m == questions.matrix.length
-n == questions.matrix[i].length
+m == matrix.length
+n == matrix[i].length
 1 <= m, n <= 20
-0 <= questions.matrix[i][j] <= 99
+0 <= matrix[i][j] <= 99
  */
 public class _766_Toeplitz_Matrix {
 
 	public static void main(String[] args) {
 		
-		int[][] matrix = {{1,2,3,4}, {5,1,2,3}, {9,5,1,2}};
-		
+		int[][] matrix = {
+				{1,2,3,4},
+				{5,1,2,3},
+				{9,5,1,2}
+		};
 		System.out.println(isToeplitzMatrix(matrix));
 	}
 

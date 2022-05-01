@@ -1,6 +1,4 @@
 package questions.linkedList;
-
-
 /*
 Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. 
 If the two linked lists have no intersection at all, return null.
@@ -64,7 +62,6 @@ public class _160_Intersection_of_Two_Linked_Lists {
 		ListNode a3 = new ListNode(8);
 		ListNode a4 = new ListNode(4);
 		ListNode a5 = new ListNode(5);
-
 		a1.next = a2;
 		a2.next = a3;
 		a3.next = a4;
@@ -74,17 +71,13 @@ public class _160_Intersection_of_Two_Linked_Lists {
 		ListNode b1 = new ListNode(5);
 		ListNode b2 = new ListNode(6);
 		ListNode b3 = new ListNode(1);
-
 		b1.next = b2;
 		b2.next = b3;
 		b3.next = a3; // THIS IS THE INTERSECTION!
 		
 		ListNode intersectNode = getIntersectionNode(a1, b1);
-
 		System.out.println(intersectNode.val);
-
-	} // main
-
+	}
 
 	/* Best solution, O(m+n) */
 	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -95,7 +88,6 @@ public class _160_Intersection_of_Two_Linked_Lists {
 		int listALen = listLength(headA);
 		int listBLen = listLength(headB);
 
-		
 		while(listALen > listBLen) {  // shift the head nodes such that they will intersect at the same time
 
 			headA = headA.next;
@@ -106,7 +98,6 @@ public class _160_Intersection_of_Two_Linked_Lists {
 			headB = headB.next;
 			listBLen--;
 		}
-
 		System.out.println("head A value: " + headA.val);
 		System.out.println("head B value: " + headB.val);
 
@@ -121,7 +112,7 @@ public class _160_Intersection_of_Two_Linked_Lists {
 		return null;
 	}
 
-	// List lenght counter, O(n)
+	// List length counter, O(n)
 	public static int listLength(ListNode head) {
 
 		int len = 0;
@@ -133,27 +124,31 @@ public class _160_Intersection_of_Two_Linked_Lists {
 		return len;
 	}
 	
-	
 	/* psycho solution... O(2m + 2n)   */
-//	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-//		
-//		ListNode a = headA;
-//		ListNode b = headB;
-//		
-//		//if a & b have different len, then we will stop the loop after second iteration
-//	    while(a != b){
-//	    	
-//	    	//for the end of first iteration, we just reset the pointer to the head of another linkedlist
-//	        if(a == null) { a = headB; } // start at the head of the questions.other list! crazy
-//	        else { a = a.next; }
-//	        
-//	        if(b == null) { b = headA; }
-//	        else { b = b.next; }
-//	    }
-//	    return a;
-//	}
+	public static ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
 
-} // class
+		ListNode a = headA;
+		ListNode b = headB;
+		//if a & b have different len, then we will stop the loop after second iteration
+	    while(a != b) {
+
+	    	//for the end of first iteration, we just reset the pointer to the head of another linkedlist
+	        if(a == null) {
+				a = headB;
+			} // start at the head of the other list! crazy
+	        else {
+				a = a.next;
+			}
+	        if(b == null) {
+				b = headA;
+			}
+	        else {
+				b = b.next;
+			}
+	    }
+	    return a;
+	}
+}
 
 
 

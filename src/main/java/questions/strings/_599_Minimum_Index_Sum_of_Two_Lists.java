@@ -8,7 +8,7 @@ import java.util.Map;
 
 /*
 Suppose Andy and Doris want to choose a restaurant for dinner, 
-and they both have a list of favorite restaurants represented by questions.strings.
+and they both have a list of favorite restaurants represented by strings.
 
 You need to help them find out their common interest with 
 the least list index sum. If there is a choice tie between answers, 

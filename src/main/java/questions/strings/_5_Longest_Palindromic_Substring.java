@@ -72,8 +72,8 @@ public class _5_Longest_Palindromic_Substring {
 	Otherwise, the value of table[i][j] is made false.
 	We have to fill table previously for substring of length = 1 and length =2 because 
 	as we are finding , if table[i+1][j-1] is true or false , so in case of 
-	(i) length == 1 , lets say i=2 , j=2 and i+1,j-1 doesn�t lies between [i , j] 
-	(ii) length == 2 ,lets say i=2 , j=3 and i+1,j-1 again doesn�t lies between [i , j].
+	(i) length == 1 , lets say i=2 , j=2 and i+1,j-1 doesn't lies between [i , j]
+	(ii) length == 2 ,lets say i=2 , j=3 and i+1,j-1 again doesn't lies between [i , j].
 	 */
 	public static int longestPalSubstr(String str) {
 		// get length of input string
@@ -98,7 +98,6 @@ public class _5_Longest_Palindromic_Substring {
 				maxLength = 2;
 			}
 		}
-
 		// Check for lengths greater than 2.
 		// k is length of substring
 		for (int k = 3; k <= n; ++k) {
@@ -124,11 +123,8 @@ public class _5_Longest_Palindromic_Substring {
 			}
 		}
 		System.out.print("Longest palindrome substring is; " + str.substring(start, start + maxLength));
-
 		return maxLength;
 	}
-
-
 }
 
 

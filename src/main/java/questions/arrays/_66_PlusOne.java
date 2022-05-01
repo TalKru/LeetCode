@@ -28,10 +28,8 @@ Output: [1,0]
 Explanation: The array represents the integer 9.
 Incrementing by one gives 9 + 1 = 10.
 Thus, the result should be [1,0].
- 
 
 Constraints:
-
 1 <= digits.length <= 100
 0 <= digits[i] <= 9
 digits does not contain any leading 0's.
@@ -54,8 +52,7 @@ public class _66_PlusOne {
 		System.out.println(Arrays.toString(plusOne(arr)));
 	}
 	
-	
-	
+
 	public static int[] plusOne(int[] digits) {
 		
 		// 1,2,5,9,9,7
@@ -63,7 +60,7 @@ public class _66_PlusOne {
 			digits[digits.length-1]++;
 			return digits;
 		}
-		// if questions.arrays is 9,9...,9
+		// if arrays is 9,9...,9
 		boolean resizeArr = true;
 		
 		for (int i = 0; i < digits.length; i++) {
@@ -90,11 +87,6 @@ public class _66_PlusOne {
 		}
 		return digits;
 	}
-
-
-
-
-
-} // class
+}
 
 

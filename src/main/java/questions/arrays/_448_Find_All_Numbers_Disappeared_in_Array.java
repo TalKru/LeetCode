@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-
 /*
 Given an array nums of n integers where nums[i] is in the range [1, n], 
 return an array of all the integers 
@@ -23,8 +22,8 @@ n == nums.length
 1 <= n <= 10^5
 1 <= nums[i] <= n
 
-Follow up: Could you do it without questions.extra space and in O(n) runtime?
-You may assume the returned list does not count as questions.extra space.
+Follow up: Could you do it without extra space and in O(n) runtime?
+You may assume the returned list does not count as extra space.
  */
 public class _448_Find_All_Numbers_Disappeared_in_Array {
 
@@ -57,8 +56,7 @@ public class _448_Find_All_Numbers_Disappeared_in_Array {
 		}
 		return leftNums;
 	}
-	
-	
+
 	// O(n)
 	public static List<Integer> findDisappearedNumbers2(int[] nums) {
 
@@ -78,7 +76,6 @@ public class _448_Find_All_Numbers_Disappeared_in_Array {
 		}
 		return leftNums;
 	}
-
 
 	// second option, more creative, fill all numbers in range, 
 	// then delete those which appear in original array

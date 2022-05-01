@@ -23,12 +23,10 @@ public class _258_Add_Digits {
 	public static void main(String[] args) {
 
 		int num = 124;
-
 		System.out.println(addDigits(num));
 	}
 
-	
-	
+
 	public static int addDigits(int num) {
 
 		if(num < 10) { return num; }
@@ -53,7 +51,7 @@ public class _258_Add_Digits {
 
 	Additionally, 0 always has a digital root of 0 obviously.
 
-	The only questions.other cases you need to worry about to find
+	The only other cases you need to worry about to find
 	the digital root are when it isn't 0 or 9.
 
 	So for any number that isn't 0 and isn't divisible by 9, 

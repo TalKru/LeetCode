@@ -1,6 +1,6 @@
 package questions.strings;
 /*
-	Write a function to find the longest common prefix string amongst an array of questions.strings.
+	Write a function to find the longest common prefix string amongst an array of strings.
 	If there is no common prefix, return an empty string "".
 
 	Example 1:
@@ -10,7 +10,7 @@ package questions.strings;
 	Example 2:
 	Input: strs = ["dog","racecar","car"]
 	Output: ""
-	Explanation: There is no common prefix among the input questions.strings.
+	Explanation: There is no common prefix among the input strings.
 
 	Constraints:
 	1 <= strs.length <= 200
@@ -76,7 +76,7 @@ public class _14_Longest_Common_Prefix {
 		}
 		return ans;
 	}
-} // class
+}
 
 
 

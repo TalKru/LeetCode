@@ -3,12 +3,11 @@ package questions.arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-
 /*
-Given two integer questions.arrays nums1 and nums2,
+Given two integer arrays nums1 and nums2,
 return an array of their intersection. 
 Each element in the result must appear as many times as it shows 
-in both questions.arrays and you may return the result in any order.
+in both arrays and you may return the result in any order.
 
 Example 1:
 Input: nums1 = [1,2,2,1], nums2 = [2,2]

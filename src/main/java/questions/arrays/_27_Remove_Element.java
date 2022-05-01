@@ -12,8 +12,8 @@ package questions.arrays;
 	
 	Return k after placing the final result in the first k slots of nums.
 	
-	Do not allocate questions.extra space for another array. You must do this by
-	 modifying the input array in-place with O(1) questions.extra memory.
+	Do not allocate extra space for another array. You must do this by
+	 modifying the input array in-place with O(1) extra memory.
 	
 	Custom Judge:
 	The judge will test your solution with the following code:
@@ -50,8 +50,6 @@ package questions.arrays;
 	0 <= nums[i] <= 50
 	0 <= val <= 100
  */
-
-
 import java.util.Arrays;
 
 public class _27_Remove_Element {
@@ -102,8 +100,6 @@ public class _27_Remove_Element {
 		arr[i] = arr[i] + arr[j];   
 		arr[j] = arr[i] - arr[j];   
 		arr[i] = arr[i] - arr[j]; 
-	} 
-	
-	
-} // class
+	}
+}
 

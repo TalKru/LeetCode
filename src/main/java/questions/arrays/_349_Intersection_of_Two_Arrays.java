@@ -3,9 +3,8 @@ package questions.arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-
 /*
-Given two integer questions.arrays nums1 and nums2,
+Given two integer arrays nums1 and nums2,
 return an array of their intersection. 
 Each element in the result must be unique and you may return the result in any order.
 
@@ -65,5 +64,4 @@ public class _349_Intersection_of_Two_Arrays {
 		return resArr;
 		
 	}
-
 }

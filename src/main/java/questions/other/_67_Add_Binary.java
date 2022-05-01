@@ -1,7 +1,7 @@
 package questions.other;
 
 /*
-    Given two binary questions.strings a and b, return their sum as a binary string.
+    Given two binary strings a and b, return their sum as a binary string.
 	
 	Example:
 	Input: a = "11", b = "1"
@@ -28,11 +28,9 @@ public class _67_Add_Binary {
 		System.out.println(s1);
 		System.out.println(s2);
 		System.out.println(add);
-		
-	} // main
+	}
 
-	
-	
+
 	static String addBinary(String a, String b) {
 		
 		if(b.equals("0")) { return a; }
@@ -41,7 +39,6 @@ public class _67_Add_Binary {
 		StringBuilder result = new StringBuilder("");  // Initialize result
 
 		int s = 0; // Initialize digit sum        
-
 		int i = a.length() - 1;
 		int j = b.length() - 1;
 
@@ -73,5 +70,4 @@ public class _67_Add_Binary {
 		}
 		return result.reverse().toString();
 	}
-
-} // class
+}

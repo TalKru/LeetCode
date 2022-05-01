@@ -1,12 +1,12 @@
 package questions.arrays;
 
+import java.util.Arrays;
 /*
 	Given an array nums of size n, return the majority element.
 	
 	The majority element is the element that appears more than ⌊n / 2⌋ times. 
 	You may assume that the majority element always exists in the array.
-	
-	
+
 	Example 1:
 	Input: nums = [3,2,3]
 	Output: 3
@@ -27,12 +27,10 @@ public class _169_Majority_Element {
 	public static void main(String[] args) {
 		
 		int[] arr = {2,2,1,1,1,2,2};
-		
-		System.out.println(majorityElement(arr));
+		System.out.println("Input: " + Arrays.toString(arr));
+		System.out.println("majority element: " + majorityElement(arr));
 	} // main
-	
 
-	
 	/* candidate repeat counter */
 	public static int majorityElement(int[] nums) {
 		
@@ -53,12 +51,9 @@ public class _169_Majority_Element {
 		}
 		return cand;
 	}
-	
-	
-	
-	
+
 	/* 
-	 When questions.arrays is sorted and also the majority element appears more than (n/2)+ times
+	 When arrays are sorted and also the majority element appears more than (n/2)+ times
 	 an overlapping occurs which promise 
 	 that we hit the element in the middle no matter how its spread across the array
 	 when it sorted!
@@ -74,23 +69,9 @@ public class _169_Majority_Element {
 	        will always contain 
 	        this element)
 	  */
-//	public static int majorityElement(int[] nums) {
-//		
-//		Arrays.sort(nums);
-//		return nums[nums.length/2];
-//	}
-	
-	
-	
-	
-} // class
-
-
-
-
-
-
-
-
-
-
+	// O(nlog(n))
+	public static int majorityElement2(int[] nums) {
+		Arrays.sort(nums);
+		return nums[nums.length/2];
+	}
+}

@@ -6,7 +6,7 @@ import java.util.Arrays;
 Write a function that reverses a string. 
 The input string is given as an array of characters s.
 You must do this by modifying the input 
-array in-place with O(1) questions.extra memory.
+array in-place with O(1) extra memory.
 
 Example 1:
 Input: s = ["h","e","l","l","o"]
@@ -31,8 +31,7 @@ public class _344_Reverse_String {
 		System.out.println(Arrays.toString(charStr));
 	}
 
-	
-	
+
 	// O(n), in-place
 	public static void reverseString(char[] s) {
 		

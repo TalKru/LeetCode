@@ -35,8 +35,7 @@ public class _594_Longest_Harmonious_Subsequence {
 		System.out.println(findLHS(arr));
 	}
 
-	
-	
+
 	public static int findLHS(int[] nums) {
 		
 		HashMap<Long, Integer> map = new HashMap<>();

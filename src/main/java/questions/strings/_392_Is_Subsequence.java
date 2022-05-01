@@ -1,6 +1,6 @@
 package questions.strings;
 /*
-Given two questions.strings s and t, return true if s
+Given two strings s and t, return true if s
 is a subsequence of t, or false otherwise.
 A subsequence of a string is a new string that is formed from 
 the original string by deleting some (can be none) of the characters
@@ -36,8 +36,6 @@ public class _392_Is_Subsequence {
 		System.out.println(isSubsequence(s, t));
 	}
 	
-	
-	
 	public static boolean isSubsequence(String s, String t) {
 		
 		if(s.length() > t.length()) { return false; }
@@ -58,7 +56,6 @@ public class _392_Is_Subsequence {
 		}
 		return false;
 	}
-
 }
 
 

@@ -67,7 +67,7 @@ public class _111_Minimum_Depth_Binary_Tree {
 	}
 	
 	/*
-	// questions.other solutions (not mine)
+	// other possible solutions
 	public int minDepth(TreeNode root) {
 	    if (root == null) return 0;
 	    int L = minDepth(root.left); 
