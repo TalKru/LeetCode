@@ -226,7 +226,7 @@ MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+#  before PyInstaller builds the exe, so as to inject date/questions.other infos into it.
 *.manifest
 *.spec
 
@@ -538,7 +538,7 @@ publish/
 *.[Pp]ublish.xml
 *.azurePubxml
 # Note: Comment the next line if you want to checkin your web deploy settings,
-# but database connection strings (with potential passwords) will be unencrypted
+# but database connection questions.strings (with potential passwords) will be unencrypted
 *.pubxml
 *.publishproj
 
