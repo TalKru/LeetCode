@@ -22,7 +22,7 @@ public class ListNode {
 		ListNode head = this;
 		
 		while(head != null) {
-			System.out.print("(" + head.val + ")-->");
+			System.out.print("\033[0;32m" + "(" + head.val + ")-->");
 			head = head.next;
 		}
 		System.out.println("null");
