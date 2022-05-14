@@ -24,30 +24,43 @@ The number of nodes in the tree is in the range [2, 100].
 public class _783_Minimum_Distance_Between_BST_Nodes {
 
 	public static void main(String[] args) {
-		
-		/***************(Tree)********************/
-		TreeNode n7  = new TreeNode(7);
-		TreeNode n2  = new TreeNode(2); 
-		TreeNode n3  = new TreeNode(3); 
-		TreeNode n13 = new TreeNode(13);
-		TreeNode n5  = new TreeNode(5);
-		TreeNode n1  = new TreeNode(1); 
-		TreeNode n9  = new TreeNode(9); 
+
+		/***************(BST Tree)********************/
+		TreeNode n25  = new TreeNode(25);
+		TreeNode n15  = new TreeNode(15);
+		TreeNode n10  = new TreeNode(10);
 		TreeNode n4  = new TreeNode(4);
-		TreeNode n6  = new TreeNode(6);
-		TreeNode n10 = new TreeNode(10);
+		TreeNode n12 = new TreeNode(12);
+		TreeNode n22  = new TreeNode(22);
+		TreeNode n18  = new TreeNode(18);
+		TreeNode n24  = new TreeNode(24);
+		TreeNode n50  = new TreeNode(50);
+		TreeNode n70 = new TreeNode(70);
+		TreeNode n90  = new TreeNode(90);
+		TreeNode n31 = new TreeNode(31);
+		TreeNode n35  = new TreeNode(35);
+		TreeNode n44 = new TreeNode(44);
+		TreeNode n66 = new TreeNode(66);
+		n25.left = n15;
+		n25.right = n50;
+		n15.left = n10;
+		n15.right = n22;
+		n10.left = n4;
+		n10.right = n12;
+		n22.left = n18;
+		n22.right = n24;
+		n50.left = n35;
+		n50.right = n70;
+		n35.left = n31;
+		n35.right = n44;
+		n70.left = n66;
+		n70.right = n90;
 
-		n7.left = n2;  n7.right = n3;
-		n2.left = n13; n2.right = n5;
-		n3.left = n1;  n3.right = n9;
-		n9.left = n4;  n9.right = n6;
-		n5.left = n10;
-		
-		BTreePrinter.printNode(n7);
-		/***************(Tree)********************/
+		n25.printTree(); // root of BST
+		/***************(BST Tree)********************/
 
-		System.out.println(minDiffInBST(n7));
-		System.out.println(minDiffInBST2(n7));
+		System.out.println("(Iterative) min diff between any 2 nodes: " + minDiffInBST(n25));
+		System.out.println("(Recursive) min diff between any 2 nodes: " + minDiffInBST2(n25));
 	}
 	
 	//-------------------------------------------------------------------------//

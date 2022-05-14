@@ -1,7 +1,6 @@
 package questions.trees;
 
 import java.util.List;
-
 /*
 Given the root of a Binary Search Tree (BST), 
 return the minimum absolute difference between 
@@ -31,29 +30,23 @@ public class _530_Minimum_Absolute_Difference_in_BST {
 		TreeNode n5  = new TreeNode(4);
 		TreeNode n1  = new TreeNode(9); 
 		TreeNode n9  = new TreeNode(19); 
-		//TreeNode n4  = new TreeNode(4);
-		//TreeNode n6  = new TreeNode(6);
-		//TreeNode n10 = new TreeNode(10);
-
-		n7.left = n2;  
+		n7.left = n2;
 		n7.right = n3;
 		n2.left = n13; 
 		n2.right = n5;
 		n3.left = n1;  
 		n3.right = n9;
-		//n9.left = n4;  
-		//n9.right = n6;
-		//n5.left = n10;
 
 		n7.printTree();
 		/***************(Tree)********************/
 
+		int res = getMinimumDifference(n7);
+
 		System.out.println("minimum absolute difference between \r\n"
-				+ "the values of any two different nodes in the tree :" + getMinimumDifference(n7));
+				+ "the values of any two different nodes in the tree :" + res);
 	}
 	
-	
-	
+
 	// slow - based on call for class: _94_Binary_Tree_Inorder_Traversal
 	public static int getMinimumDifference(TreeNode root) {
 
@@ -68,9 +61,8 @@ public class _530_Minimum_Absolute_Difference_in_BST {
 		}
 		return minDif;
 	}
-	
-	
-	
+
+
 	// fast - LeetCode
 	int min = Integer.MAX_VALUE;
     Integer prev = null;
