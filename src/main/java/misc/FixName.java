@@ -36,6 +36,6 @@ public class FixName {
 				}
 			}
 		}
-		System.out.println(fixedStr);
+		System.out.println("\033[1;32m" + fixedStr);
 	}
 }
