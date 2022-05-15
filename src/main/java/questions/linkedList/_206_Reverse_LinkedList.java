@@ -46,13 +46,16 @@ public class _206_Reverse_LinkedList {
 			updated.printFromHeadtoTail();
 		}
 	}
-	
-	
+
 	
 	public static ListNode reverseList(ListNode head) {
-		
-		if(head == null) return head;
-		if(head.next == null) return head;
+
+		if(head == null) {
+			return head;
+		}
+		if(head.next == null) {
+			return head;
+		}
 		if(head.next.next == null) {
 			ListNode newHead = head.next;
 			newHead.next = head;
@@ -60,25 +63,22 @@ public class _206_Reverse_LinkedList {
 			return newHead;
 		}
 		// at least 3 nodes exist from this point
-		
 		ListNode a = head;
 		ListNode b = head.next;
 		ListNode c = head.next.next;
-		
+
 		a.next = null; // head is now tail   null<-(a)  (?)->(?)->null
-		
+
 		while(c != null) {
 			b.next = a;
 			a = b;
 			b = c;
 			c = c.next;
 		}
-		
-		// (?)<-(?)<-...(a)->(b)->[c/null] 
+		// (?)<-(?)<-...(a)->(b)->[c/null]
 		b.next = a;
-		return b; 
+		return b;
 	}
-	
 }
 
 
