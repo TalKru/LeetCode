@@ -44,55 +44,35 @@ class Merge_Two_Sorted_Lists {
 		ListNode n2 = new ListNode(2);
 		ListNode n3 = new ListNode(9);
 		ListNode n4 = new ListNode(47);
-
-		ListNode m1 = new ListNode(1);
-		ListNode m2 = new ListNode(3);
-		ListNode m3 = new ListNode(7);
-
 		n1.next = n2;
 		n2.next = n3;
 		n3.next = n4;
-		
+		ListNode m1 = new ListNode(1);
+		ListNode m2 = new ListNode(3);
+		ListNode m3 = new ListNode(7);
 		m1.next = m2;
 		m2.next = m3;
-		
-		/*save for print only*/
-		ListNode nn1 = n1;
-		ListNode mm1 = m1;
-		
+
 		System.out.println("Input sorted lists: ");
 		
-		while(nn1 != null) {
-			System.out.print("(" + nn1.val + ")-->");
-			nn1 = nn1.next;
-		}
-		System.out.println();
-		while(mm1 != null) {
-			System.out.print("(" + mm1.val + ")-->");
-			mm1 = mm1.next;
-		}
-		System.out.println();
-		
-		
-		ListNode result = mergeTwoLists(n1, m1);              // func call
-		
+		n1.printFromHeadtoTail();
+		m1.printFromHeadtoTail();
+		ListNode result = mergeTwoLists(n1, m1);
 		
 		System.out.println("Result, merged list: ");
-		
-		while(result != null) {
-			System.out.print("(" + result.val + ")-->");
-			result = result.next;
-		}
+		result.printFromHeadtoTail();
 	} 
 
 
-	
 	/* Memory saving approach, requires rearanging 2 sorted lists into 1 sorted list */
 	public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
-		if(list1 == null) { return list2; }
-		if(list2 == null) { return list1; }
-
+		if(list1 == null) {
+			return list2;
+		}
+		if(list2 == null) {
+			return list1;
+		}
 		ListNode itrtNode = new ListNode();
 		ListNode head = itrtNode;
 
@@ -110,14 +90,16 @@ class Merge_Two_Sorted_Lists {
 				list2 = list2.next;
 			}
 		}
-		if(list1 != null) { itrtNode.next = list1; }   // link the remaining of the unfinished list
-		if(list2 != null) { itrtNode.next = list2; }
-
+		if(list1 != null) {         // link the remaining of the unfinished list
+			itrtNode.next = list1;
+		}
+		if(list2 != null) {
+			itrtNode.next = list2;
+		}
 		return head.next;
 	}
 
 	
-
 	/* Fast approach, also easy, creating new merged list from the l1, l2*/
 	//		public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 	//			
@@ -163,8 +145,4 @@ class Merge_Two_Sorted_Lists {
 	//			return headNodeCopy;
 	//		}
 
-} // class
-
-
-
-
+}

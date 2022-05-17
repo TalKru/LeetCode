@@ -79,19 +79,3 @@ public class _203_Remove_LinkedList_Elements {
 		return head;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -26,11 +26,47 @@ public class _21_Merge_Two_Sorted_Lists {
 
 	public static void main(String[] args) {
 
-	} // main
+		/*************(LinkedList)*************/
+		ListNode n1 = new ListNode(1); // root
+		ListNode n2 = new ListNode(2);
+		ListNode n3 = new ListNode(3);
+		ListNode n4 = new ListNode(4);
+		ListNode n5 = new ListNode(5);
+		ListNode n6 = new ListNode(6);
+		ListNode n7 = new ListNode(7);
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+		n6.next = n7;
+
+		System.out.println("List 1: ");
+		n1.printFromHeadtoTail();
+
+		ListNode m1 = new ListNode(0);
+		ListNode m2 = new ListNode(0);
+		ListNode m3 = new ListNode(4);
+		ListNode m4 = new ListNode(7);
+		ListNode m5 = new ListNode(8);
+		ListNode m6 = new ListNode(9);
+		m1.next = m2;
+		m2.next = m3;
+		m3.next = m4;
+		m4.next = m5;
+		m5.next = m6;
+
+		System.out.println("List 2: ");
+		m1.printFromHeadtoTail();
+		/*************(LinkedList)*************/
+
+		ListNode mergedList = mergeTwoLists(n1, m1);
+		System.out.println("Merged List: ");
+		mergedList.printFromHeadtoTail();
+	}
 
 
-
-	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+	public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
 		if(list1 == null) { 
 			return list2; 
@@ -55,7 +91,6 @@ public class _21_Merge_Two_Sorted_Lists {
 				list2 = list2.next;
 			}
 		}
-
 		if(list1 != null) {
 			itrtNode.next = list1;
 		}
@@ -65,20 +100,5 @@ public class _21_Merge_Two_Sorted_Lists {
 		return head.next;
 	}
 
-
-
 }
 
-
-
-
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */

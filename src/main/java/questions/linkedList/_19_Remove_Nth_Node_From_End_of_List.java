@@ -1,6 +1,4 @@
 package questions.linkedList;
-
-
 /*
 Given the head of a linked list, 
 remove the nth node from the end of the list and return its head.
@@ -53,7 +51,6 @@ public class _19_Remove_Nth_Node_From_End_of_List {
 		
 		int removeNodeLocation = 2;
 		System.out.println("remove Node Location from the TAIL: " + removeNodeLocation);
-		
 		
 		ListNode result = removeNthFromEnd(n1, removeNodeLocation);
 		

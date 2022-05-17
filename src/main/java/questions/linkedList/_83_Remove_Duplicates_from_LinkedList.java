@@ -26,7 +26,6 @@ public class _83_Remove_Duplicates_from_LinkedList {
 		ListNode n1 = new ListNode(1);
 		ListNode n2 = new ListNode(1);
 		ListNode n3 = new ListNode(2);
-		
 		n1.next = n2;
 		n2.next = n3;
 		
@@ -39,8 +38,7 @@ public class _83_Remove_Duplicates_from_LinkedList {
 		headResult.printFromHeadtoTail();
 	}
 
-	
-	
+
 	public static ListNode deleteDuplicates(ListNode head) {
 		
 		if(head == null || head.next == null) return head;
@@ -67,25 +65,3 @@ public class _83_Remove_Duplicates_from_LinkedList {
 	}
 
 }
-
-
-
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-
-
-
-
-
-
-
-
-

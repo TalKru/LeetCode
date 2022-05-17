@@ -23,8 +23,26 @@ Follow up: Could you do it in O(n) time and O(1) space?
 public class _234_Palindrome_Linked_List {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		/*************(LinkedList)*************/
+		ListNode n1 = new ListNode(47); // root
+		ListNode n2 = new ListNode(1);
+		ListNode n3 = new ListNode(3);
+		ListNode n4 = new ListNode(7);
+		ListNode n5 = new ListNode(3);
+		ListNode n6 = new ListNode(1);
+		ListNode n7 = new ListNode(47);
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		n5.next = n6;
+		n6.next = n7;
+		n1.printFromHeadtoTail();
+		/*************(LinkedList)*************/
+
+		System.out.println("LinkedList is Palindrome? ");
+		System.out.println(isPalindrome(n1));
 	}
 
 	/**

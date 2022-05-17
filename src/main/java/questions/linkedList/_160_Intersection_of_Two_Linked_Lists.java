@@ -82,9 +82,12 @@ public class _160_Intersection_of_Two_Linked_Lists {
 	/* Best solution, O(m+n) */
 	public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
-		if(headA == null || headB == null) return null;
-		if(headA == headB) return headA;
-
+		if(headA == null || headB == null) {
+			return null;
+		}
+		if(headA == headB) {
+			return headA;
+		}
 		int listALen = listLength(headA);
 		int listBLen = listLength(headB);
 

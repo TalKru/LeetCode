@@ -1,6 +1,5 @@
 package questions.linkedList;
 
-
 /*
 Write a function to delete a node in a singly-linked list. 
 You will not be given access to the head of the list, 
@@ -58,15 +57,3 @@ public class _237_Delete_Node_in_a_Linked_List {
 		node.next = node.next.next;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
