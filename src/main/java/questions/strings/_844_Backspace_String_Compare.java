@@ -95,20 +95,25 @@ public class _844_Backspace_String_Compare {
 
                 if (s1.charAt(i) == '#') {
                     countS1++;
-                } else {
+                }
+                else {
                     countS1--;
                 }
                 i--;
             }
-            char c1 = i < 0 ? '@' : s1.charAt(i);
+            char c1 = (i < 0) ? '@' : s1.charAt(i);
 
             while (j >= 0 && (countS2 > 0 || s2.charAt(j) == '#')) {
 
-                if (s2.charAt(j) == '#') countS2++;
-                else countS2--;
+                if (s2.charAt(j) == '#') {
+                    countS2++;
+                }
+                else {
+                    countS2--;
+                }
                 j--;
             }
-            char c2 = j < 0 ? '@' : s2.charAt(j);
+            char c2 = (j < 0) ? '@' : s2.charAt(j);
 
             if (c1 != c2) {
                 return false;
