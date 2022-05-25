@@ -44,30 +44,9 @@ public class _844_Backspace_String_Compare {
         Stack<Character> stack1 = new Stack<>();
         Stack<Character> stack2 = new Stack<>();
 
-        for (int i = 0; i < s1.length(); i++) {
+        cleanStrIntoStack(s1, stack1);
+        cleanStrIntoStack(s2, stack2);
 
-            if (s1.charAt(i) == '#') {
-
-                if (!stack1.isEmpty()) {
-                    stack1.pop();
-                }
-            }
-            else {
-                stack1.push(s1.charAt(i));
-            }
-        }
-        for (int i = 0; i < s2.length(); i++) {
-
-            if (s2.charAt(i) == '#') {
-
-                if (!stack2.isEmpty()) {
-                    stack2.pop();
-                }
-            }
-            else {
-                stack2.push(s2.charAt(i));
-            }
-        }
         if (stack1.size() != stack2.size()) {
             return false;
         }
@@ -78,6 +57,23 @@ public class _844_Backspace_String_Compare {
             }
         }
         return true;
+    }
+
+    private static void cleanStrIntoStack(String s, Stack<Character> stack) {
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch = s.charAt(i);
+
+            if (ch == '#') {
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
+            }
+            else {
+                stack.push(ch);
+            }
+        }
     }
 
     // O(n+m) Runtime
@@ -95,20 +91,25 @@ public class _844_Backspace_String_Compare {
 
                 if (s1.charAt(i) == '#') {
                     countS1++;
-                } else {
+                }
+                else {
                     countS1--;
                 }
                 i--;
             }
-            char c1 = i < 0 ? '@' : s1.charAt(i);
+            char c1 = (i < 0) ? '@' : s1.charAt(i);
 
             while (j >= 0 && (countS2 > 0 || s2.charAt(j) == '#')) {
 
-                if (s2.charAt(j) == '#') countS2++;
-                else countS2--;
+                if (s2.charAt(j) == '#') {
+                    countS2++;
+                }
+                else {
+                    countS2--;
+                }
                 j--;
             }
-            char c2 = j < 0 ? '@' : s2.charAt(j);
+            char c2 = (j < 0) ? '@' : s2.charAt(j);
 
             if (c1 != c2) {
                 return false;
