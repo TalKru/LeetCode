@@ -6,7 +6,7 @@ public class FixName {
 
 	public static void main(String[] args) {
 
-		System.out.println("Enter the question name:");
+		System.out.println("\033[0;35m" + "Enter the question name:");
 		scanFromUser();
 	}
 
