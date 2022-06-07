@@ -28,25 +28,37 @@ public class _884_Uncommon_Words_from_Two_Sentences {
 
     public static void main(String[] args) {
 
-//        String s1 = "this apple is sweet";
-//        String s2 = "this apple is sour";
-        String s1 = "a b b b c";
-        String s2 = "a y y x";
-        String[] res = uncommonFromSentences(s1, s2);
+        String s1 = "this apple is sweet";
+        String s2 = "this apple is sour";
+        String s3 = "a b b b c";
+        String s4 = "a y y x";
+        String[] res = uncommonFromSentences(s1, s2, s3, s4);
 
-        System.out.println("String 1: " + s1);
-        System.out.println("String 2: " + s2);
+        //System.out.println("String 1: " + s1);
+        //System.out.println("String 2: " + s2);
         System.out.println(Arrays.toString(res));
     }
 
-    public static String[] uncommonFromSentences(String s1, String s2) {
+    // uniqueWords
+    public static String[] uncommonFromSentences(String... phrases) {
 
-        String[] allWords = (s1 + " " + s2).split("\\s+"); // gather all words into single array
+        List<String> wordList = new LinkedList<>();
+
+        for (String s : phrases){
+
+            wordList.addAll(List.of(s.split("\\s+"))); // gather all words into single array
+        }
+        //String[] allWords = (s1 + " " + s2).split("\\s+"); // only 2 strings input
+        return uniqueWords(wordList);
+    }
+
+    public static String[] uniqueWords(List<String> allWords) {
+
         HashMap<String, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < allWords.length; i++) {
+        for (int i = 0; i < allWords.size(); i++) {
 
-            map.put(allWords[i], map.getOrDefault(allWords[i], 0) + 1);
+            map.put(allWords.get(i), map.getOrDefault(allWords.get(i), 0) + 1);
         }
         List<String> uncommonWords = new LinkedList<>();
 
