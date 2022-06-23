@@ -1,4 +1,4 @@
-package questions.playList;
+package interviewQuestions.playList;
 /*
 Implement a playlist shuffle:
 

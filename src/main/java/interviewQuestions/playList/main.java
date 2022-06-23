@@ -1,4 +1,4 @@
-package questions.playList;
+package interviewQuestions.playList;
 
 public class main {
 

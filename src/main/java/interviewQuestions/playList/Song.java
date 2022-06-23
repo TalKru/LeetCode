@@ -1,4 +1,4 @@
-package questions.playList;
+package interviewQuestions.playList;
 
 public class Song {
     private final String songName;
