@@ -68,7 +68,8 @@ public class _120_Triangle {
             }
             System.out.println();
         }
-        int minSum = minimumTotal(triangle);
+        //int minSum = minimumTotal(triangle);
+        int minSum = minimumTotal3(triangle);
 
         System.out.println("Min path from top to bottom (sum): " + minSum);
     }
@@ -133,6 +134,32 @@ public class _120_Triangle {
         }
         return min;
         //return Arrays.stream(pathsArr).min().getAsInt();
+    }
+    // ============================================================================================== //
+
+    // DP
+    public static int minimumTotal3(List<List<Integer>> triangle) {
+
+        int LEVELS = triangle.size();
+
+        List<Integer> currLine = new ArrayList<>();
+        currLine.addAll(triangle.get(LEVELS - 1));
+
+        for (int level = LEVELS - 2; level >= 0 ; level--) {
+
+            int levelLen = triangle.get(level).size();
+
+            for (int i = 0; i < levelLen; i++) {
+
+                int leftChild  = currLine.get(i);
+                int rightChild = currLine.get(i + 1);
+                int minChild = Math.min(leftChild, rightChild);
+                int addMinChildVal = triangle.get(level).get(i) + minChild;
+
+                currLine.set(i, addMinChildVal);
+            }
+        }
+        return currLine.get(0);
     }
     // ============================================================================================== //
 }
