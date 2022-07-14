@@ -4,46 +4,62 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
+Given a non-empty special binary tree consisting of nodes with the non-negative value,
+where each node in this tree has exactly two or zero sub-node.
+If the node has two sub-nodes,
+then this node's value is the smaller value among its two sub-nodes.
+More formally,
+the property root.val = min(root.left.val, root.right.val) always holds.
+Given such a binary tree,
+you need to output the second minimum value
+in the set made of all the nodes' value in the whole tree.
+If no such second minimum value exists, output -1 instead.
 
+Example 1:
+Input: root = [2,2,5,null,null,5,7]
+Output: 5
+Explanation: The smallest value is 2, the second smallest value is 5.
+
+Example 2:
+Input: root = [2,2,2]
+Output: -1
+Explanation: The smallest value is 2, but there isn't any second smallest value.
+
+Constraints:
+The number of nodes in the tree is in the range [1, 25].
+1 <= Node.val <= 2^31 - 1
+root.val == min(root.left.val, root.right.val) for each internal node of the tree.
  */
 public class _671_Second_Minimum_Node_In_a_Binary_Tree {
 
 	public static void main(String[] args) {
 
-		/***************(Tree)********************/
-		TreeNode n7  = new TreeNode(7);
-		TreeNode n2  = new TreeNode(2); 
-		TreeNode n3  = new TreeNode(30); 
-		TreeNode n13 = new TreeNode(13);
+		/***************(special Tree)********************/
+		TreeNode n2  = new TreeNode(2);
+		TreeNode n22 = new TreeNode(2);
 		TreeNode n5  = new TreeNode(5);
-		TreeNode n1  = new TreeNode(10); 
-		TreeNode n9  = new TreeNode(9); 
-		TreeNode n4  = new TreeNode(4);
-		TreeNode n6  = new TreeNode(6);
-		TreeNode n10 = new TreeNode(10);
+		TreeNode n55 = new TreeNode(5);
+		TreeNode n7  = new TreeNode(7);
+		n2.left = n22;
+		n2.right = n5;
+		n5.left = n55;
+		n5.right = n7;
 
-		n7.left = n2;  n7.right = n3;
-		n2.left = n13; n2.right = n5;
-		n3.left = n1;  n3.right = n9;
-		n9.left = n4;  n9.right = n6;
-		n5.left = n10;
+		BTreePrinter.printNode(n2);
+		/***************(special Tree)********************/
 
-		BTreePrinter.printNode(n7);
-		/***************(Tree)********************/
-
-		System.out.println(findSecondMinimumValue(n7));
+		System.out.println("find Second Minimum Value: " + findSecondMinimumValue(n2));
 	}
 
 	//=========================================================================
 	// Iterative BFS, O(n)
-	public static int findSecondMinimumValue2(TreeNode root) {
+	public static int findSecondMinimumValue(TreeNode root) {
 
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		Queue<TreeNode> queue = new LinkedList<>();
 
 		queue.add(root);
 
-		//int minVal = Integer.MAX_VALUE; 
-		Integer secMin = null; 
+		Integer secMin = null;
 
 		while(!queue.isEmpty()) {
 
@@ -57,14 +73,11 @@ public class _671_Second_Minimum_Node_In_a_Binary_Tree {
 				else {
 					secMin = Math.min(secMin, currNode.val);
 				}
-			}      
-
+			}
 			if(currNode.left != null) {
-
 				queue.add(currNode.left);
 			}
 			if(currNode.right != null) {
-
 				queue.add(currNode.right);
 			}
 		}
@@ -73,14 +86,14 @@ public class _671_Second_Minimum_Node_In_a_Binary_Tree {
 	//=========================================================================
 
 	// root.val = min(root.left.val, root.right.val)
-	public static int findSecondMinimumValue(TreeNode root) {
+	public static int findSecondMinimumValue2(TreeNode root) {
 
 		if(root.left == null) return -1;
 
-		int l = root.left.val  == root.val ? findSecondMinimumValue(root.left)  : root.left.val;
-		int r = root.right.val == root.val ? findSecondMinimumValue(root.right) : root.right.val;
+		int l = (root.left.val  == root.val) ? findSecondMinimumValue(root.left)  : root.left.val;
+		int r = (root.right.val == root.val) ? findSecondMinimumValue(root.right) : root.right.val;
 
-		return l == -1 || r == -1 ? Math.max(l, r) : Math.min(l, r);
+		return (l == -1 || r == -1) ? Math.max(l, r) : Math.min(l, r);
 	}
 	//=========================================================================
 }
