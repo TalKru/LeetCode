@@ -23,26 +23,29 @@ public class _257_Binary_Tree_Paths {
 
     public static void main(String[] args) {
 
-        /***************(Tree)********************/
-        TreeNode root  = new TreeNode(7);
-        TreeNode n2  = new TreeNode(2);
-        TreeNode n3  = new TreeNode(3);
+        //====================(Tree)====================//
+        TreeNode root = new TreeNode(7);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n3 = new TreeNode(3);
         TreeNode n13 = new TreeNode(13);
-        TreeNode n5  = new TreeNode(5);
-        TreeNode n1  = new TreeNode(1);
-        TreeNode n9  = new TreeNode(9);
-        TreeNode n4  = new TreeNode(4);
-        TreeNode n6  = new TreeNode(6);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n1 = new TreeNode(1);
+        TreeNode n9 = new TreeNode(9);
+        TreeNode n4 = new TreeNode(4);
+        TreeNode n6 = new TreeNode(6);
         TreeNode n10 = new TreeNode(10);
-
-        root.left = n2;  root.right = n3;
-        n2.left = n13; n2.right = n5;
-        n3.left = n1;  n3.right = n9;
-        n9.left = n4;  n9.right = n6;
+        root.left = n2;
+        root.right = n3;
+        n2.left = n13;
+        n2.right = n5;
+        n3.left = n1;
+        n3.right = n9;
+        n9.left = n4;
+        n9.right = n6;
         n5.left = n10;
 
-        BTreePrinter.printNode(root);
-        /***************(Tree)********************/
+        root.printTree();
+        //====================(Tree)====================//
 
         List<String> list = binaryTreePaths(root);
 
@@ -60,6 +63,7 @@ public class _257_Binary_Tree_Paths {
 
         return pathList;
     }
+
     private static void pathsToLeafs(TreeNode node, String currentPath, List<String> pathList) {
 
         if (node.left == null && node.right == null) {
