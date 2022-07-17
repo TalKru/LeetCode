@@ -32,31 +32,33 @@ public class TreeNode {
         BTreePrinter.printNode(this);
     }
 
+    /*
+    Construct binary tree from Integer array as input.
+    returns the root of the built tree.
+     */
     public static TreeNode buildTree(Integer[] arr) {
 
-        TreeNode root = null;
-        Queue<TreeNode> q = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         int i = 0;
-        TreeNode t = arr[i] == null ? null : new TreeNode(arr[i]);
+        TreeNode root = (arr[i] == null) ? null : new TreeNode(arr[i]);
 
-        root = t;
-        q.add(root);
+        queue.add(root);
         i++;
 
-        while (!q.isEmpty() && i < arr.length) {
+        while (!queue.isEmpty() && i < arr.length) {
 
-            TreeNode t1 = q.poll();
+            TreeNode tempNode = queue.poll();
 
-            if (t1 != null) {
-                t1.left = arr[i] == null ? null : new TreeNode(arr[i]);
-                q.add(t1.left);
+            if (tempNode != null) {
+                tempNode.left = (arr[i] == null) ? null : new TreeNode(arr[i]);
+                queue.add(tempNode.left);
                 i++;
 
                 if (i >= arr.length) {
                     break;
                 }
-                t1.right = arr[i] == null ? null : new TreeNode(arr[i]);
-                q.add(t1.right);
+                tempNode.right = (arr[i] == null) ? null : new TreeNode(arr[i]);
+                queue.add(tempNode.right);
                 i++;
             }
         }
