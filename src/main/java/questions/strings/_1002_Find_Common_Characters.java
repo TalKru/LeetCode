@@ -53,7 +53,7 @@ public class _1002_Find_Common_Characters {
 
     public static List<Character> commonChars(String s1, String s2) { // overloading
 
-        List<Character> chars = new LinkedList<>();
+        List<Character> overlapCharList = new LinkedList<>();
         HashMap<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < s1.length(); i++) {
@@ -68,23 +68,22 @@ public class _1002_Find_Common_Characters {
 
             if (map.containsKey(c) && map.get(c) > 0) {
 
-                chars.add(c);
+                overlapCharList.add(c);
 
                 map.put(c, map.get(c) - 1);
             }
         }
-        return chars;
+        return overlapCharList;
     }
 
     private static String listToSrting(List<Character> charList) {
 
-        String str = "";
+        StringBuilder str = new StringBuilder();
 
         for (Character c : charList) {
-
-            str += c;
+            str.append(c);
         }
-        return str;
+        return str.toString();
     }
 
 }
