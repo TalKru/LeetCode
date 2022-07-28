@@ -35,7 +35,7 @@ public class _242_Valid_Anagram {
 		System.out.println("Is string 1 is an anagram of string 2: " + res);
 	}
 
-
+	// fastest O(n)
 	public static boolean isAnagram(String s, String t) {
 
 		if(s.length() != t.length()) {
@@ -43,11 +43,12 @@ public class _242_Valid_Anagram {
 		}
 		HashMap<Character, Integer> map = new HashMap<>();
 
-		for (int i = 0; i < s.length(); i++) { // build mapping of the (Characters , count)
+		for (int i = 0; i < s.length(); i++) {
 
 			char c = s.charAt(i);
+			int count = map.getOrDefault(c, 0) + 1;
 
-			map.put(c, map.getOrDefault(c, 0) + 1);
+			map.put(c, count);
 		}
 		for (int i = 0; i < t.length(); i++) {
 
