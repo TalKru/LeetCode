@@ -51,6 +51,7 @@ public class _1260_Shift_2D_Grid {
 
         List<List<Integer>> matList = shiftGrid(grid, k);
 
+        System.out.println("\nAfter k shifts: ");
         System.out.println(matList);
     }
 
