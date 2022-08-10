@@ -34,6 +34,50 @@ public class _78_Subsets {
 
     public static List<List<Integer>> subsets(int[] nums) {
 
+        int[] binNum = new int[nums.length];
+
+        List<List<Integer>> powerSet = new LinkedList<>();
+
+        long size = (long) Math.pow(2, nums.length);
+
+        for (int i = 0; i < size; i++) {
+            binToElement(binNum, nums, powerSet);
+            addOneBin(binNum);
+        }
+        return powerSet;
+    }
+
+    private static void binToElement(int[] binNum, int[] nums, List<List<Integer>> powerSet) {
+
+        List<Integer> element = new LinkedList<>();
+
+        for (int i = 0; i < binNum.length; i++) {
+
+            if (binNum[i] == 1) {
+                element.add(nums[i]);
+            }
+        }
+        powerSet.add(element);
+    }
+
+    private static void addOneBin(int[] binNum) {
+
+        for (int i = 0; i < binNum.length; i++) {
+
+            if (binNum[i] == 0) {
+                binNum[i] = 1;
+                return;
+            }
+            else {
+                binNum[i] = 0;
+            }
+        }
+    }
+    // =============================================================== //
+
+    // bit manipulation
+    public static List<List<Integer>> subsetsBits(int[] nums) {
+
         long n = (long) Math.pow(2, nums.length);
 
         List<List<Integer>> result = new LinkedList<>();
