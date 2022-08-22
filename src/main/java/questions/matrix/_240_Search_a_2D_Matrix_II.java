@@ -36,7 +36,7 @@ public class _240_Search_a_2D_Matrix_II {
                 {10, 13, 14, 17, 24},
                 {18, 21, 23, 26, 30},
         };
-        int target = 5;
+        int target = 13;
 
         System.out.println("Input: ");
         PrintMatrix.print(mat);
