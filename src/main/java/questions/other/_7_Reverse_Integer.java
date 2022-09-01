@@ -24,7 +24,12 @@ Constraints:
 public class _7_Reverse_Integer {
 
 	public static void main(String[] args) {
-		
+
+		int num = 1234567;
+		int reverse = reverse(num);
+
+		System.out.println("Input:   " + num);
+		System.out.println("Reverse: " + reverse);
 	}
 	
 	
