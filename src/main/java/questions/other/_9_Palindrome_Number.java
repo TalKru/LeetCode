@@ -36,66 +36,36 @@ public class _9_Palindrome_Number {
 		System.out.println("Value x=(" + x + ") is palindrome? -> " + res);
 	}
 
-	
-	
-//	public static boolean isPalindrome(int x) {
-//
-//		if(x < 0) {
-//			return false;
-//		}
-//
-//		String numStr = String.valueOf(x);
-//
-//		for (int i = 0; i < numStr.length()/2 ; i++) {
-//
-//			if( numStr.charAt(i) != numStr.charAt(numStr.length()-i-1) ) {
-//				return false;
-//			}
-//		}
-//		return true; 
-//	}
-
-	
-	
 	public static boolean isPalindrome(int x) {
 
-		if(x < 0)  { return false; }
-		if(x <= 9) { return false; }
-		
+		if (x < 0) {
+			return false;
+		}
+
 		int temp = x;
 		int rev = 0;
-
 		while(temp != 0) {
 			
 			rev = rev * 10 + (temp % 10);  // temp's last digit is (temp % 10)
 			temp /= 10;
 		}
-		if(rev == x) { return true; }
-		else { return false; }
+		return (rev == x) ? true : false;
+	}
+
+	public static boolean isPalindrome2(int x) {
+
+		if(x < 0) {
+			return false;
+		}
+		String numStr = String.valueOf(x);
+
+		for (int i = 0; i < numStr.length()/2 ; i++) {
+
+			if( numStr.charAt(i) != numStr.charAt(numStr.length()-i-1) ) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
