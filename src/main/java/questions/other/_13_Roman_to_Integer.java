@@ -60,51 +60,32 @@ public class _13_Roman_to_Integer {
 		System.out.println("Numeric output: " + romanToInt(input));
 	}
 
-
-	
 	public static int romanToInt(String s) {
 
-		HashMap<Character, Integer> hm = new HashMap<>();
-		hm.put('I',1);
-		hm.put('V',5);
-		hm.put('X',10);
-		hm.put('L',50);
-		hm.put('C',100);
-		hm.put('D',500);
-		hm.put('M',1000);
+		HashMap<Character, Integer> map = new HashMap<>();
+		map.put('I',1);
+		map.put('V',5);
+		map.put('X',10);
+		map.put('L',50);
+		map.put('C',100);
+		map.put('D',500);
+		map.put('M',1000);
 
 		int len    = s.length();
 		int result = 0;
 		int i      = 0;
 
 		while(i < len) {
+			if(i < len-1 && map.get(s.charAt(i)) < map.get(s.charAt(i+1))) {
 
-			if(i < len-1 && hm.get(s.charAt(i)) < hm.get(s.charAt(i+1))) {
-
-				result += hm.get(s.charAt(i+1)) - hm.get(s.charAt(i));
+				result += map.get(s.charAt(i+1)) - map.get(s.charAt(i));
 				i += 2;
 			}
 			else {
-				result += hm.get(s.charAt(i));
+				result += map.get(s.charAt(i));
 				i++;
 			}
 		}
 		return result;
 	}
-
-} // class
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
