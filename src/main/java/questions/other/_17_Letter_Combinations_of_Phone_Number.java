@@ -64,7 +64,7 @@ public class _17_Letter_Combinations_of_Phone_Number {
 
 		for (int i = 1; i < digits.length(); i++) {
 
-			List<String> tmpList = new ArrayList<>();          // 
+			List<String> tmpList = new ArrayList<>();
 			List<String> newChars = map.get(digits.charAt(i)); // pull existing combinations
 
 			for (int j = 0; j < result.size(); j++) {
@@ -76,23 +76,4 @@ public class _17_Letter_Combinations_of_Phone_Number {
 		}
 		return result;
 	}
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
