@@ -1,5 +1,9 @@
 package questions.linkedList;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /*
 Given the head of a linked list,
 return the list after sorting it in ascending order.
@@ -47,6 +51,33 @@ public class _148_Sort_List {
         sortedHead.printFromHeadtoTail();
     }
 
+    // ========================================================================================= /
+    // Easy method but much slower,
+    // Copy to list, sort, then copy sorted element back to linked list
+    public static ListNode sortList2(ListNode head) {
+
+        List<Integer> list = new ArrayList<>();
+        ListNode tempNode = head;
+        int vals = 0;
+
+        while (tempNode != null) {
+            vals++;
+            list.add(tempNode.val);
+            tempNode = tempNode.next;
+        }
+        Collections.sort(list);
+
+        tempNode = head;
+        int i = 0;
+        while (vals != 0) {
+            tempNode.val = list.get(i++);
+            tempNode = tempNode.next;
+            vals--;
+        }
+        return head;
+    }
+
+    // ========================================================================================= /
     private static class MergeHelper {
         public ListNode newHead;
         public ListNode newTail;
@@ -103,10 +134,9 @@ public class _148_Sort_List {
         return dummySortedHead.next;
     }
 
-    /* merge listOne and listTwo.
-    Save the sorted list head into rst.newHead
-    Save the last node of the sorted list into rst.newTail
-    */
+//    merge listOne and listTwo.
+//    Save the sorted list head into rst.newHead
+//    Save the last node of the sorted list into rst.newTail
     private static void merge(ListNode listOne, ListNode listTwo, MergeHelper rst) {
 
         ListNode dummyHead = new ListNode(0);
@@ -139,10 +169,9 @@ public class _148_Sort_List {
         rst.newTail = lastNode;
     }
 
-    /*
-     add at max #"count" nodes into "head" from "source"
-     return the new position of source after adding.
-    */
+
+//     add at max #"count" nodes into "head" from "source"
+//     return the new position of source after adding.
     private static ListNode addNode(ListNode head, ListNode source, int count) {
 
         while (count > 0 && source != null) {
@@ -154,5 +183,6 @@ public class _148_Sort_List {
         head.next = null;
         return source;
     }
+// ========================================================================================= /
 }
 
