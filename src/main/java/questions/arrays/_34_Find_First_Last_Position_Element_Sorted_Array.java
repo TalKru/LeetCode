@@ -30,10 +30,8 @@ public class _34_Find_First_Last_Position_Element_Sorted_Array {
 
     public static void main(String[] args) {
 
-//        int[] arr = {5,7,7,8,8,10};
-//        int target = 8;
-        int[] arr = {1};
-        int target = 1;
+        int[] arr = {5,7,7,8,8,10};
+        int target = 8;
         System.out.println("Input Array: " + Arrays.toString(arr));
         System.out.println("Input Target: " + target);
 
