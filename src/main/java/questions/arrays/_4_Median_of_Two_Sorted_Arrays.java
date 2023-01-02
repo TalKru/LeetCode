@@ -36,7 +36,6 @@ public class _4_Median_of_Two_Sorted_Arrays {
 		System.out.println(Arrays.toString(sortedArr));
 
 		double res = findMedianSortedArrays(arr1, arr2);
-
 		System.out.println(res);
 	}
 
